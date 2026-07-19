@@ -25,7 +25,7 @@ const AddBtn = () => {
           setCreateTasks([...createTasks, newTasks])
 
         }}
-        className={`px-6 py-3 ${isDark ? "bg-[#aa9ff6] text-white" : "bg-[#6F64E3] text-white "}  rounded-md font-medium text-md`}
+        className={`px-6 py-3 responsive3 ${isDark ? "bg-[#aa9ff6] text-white" : "bg-[#6F64E3] text-white "}  rounded-md font-medium text-md`}
       >
         Add Tasks
       </button>

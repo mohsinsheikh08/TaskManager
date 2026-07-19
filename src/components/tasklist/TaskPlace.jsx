@@ -26,10 +26,12 @@ const TaskPlace = () => {
 
   return (
     <div>
-      <TaskNames />
-      <div className="flex flex-col gap-5 h-57 mb-2 overflow-auto scrollbar-none">
+     <div className="scrollbar-none">
+       <TaskNames />
+     </div>
+      <div className="flex flex-col gap-5 h-45 mb-2  overflow-auto scrollbar-none">
         {filteredTasks.map((elem) => (
-          <div key={elem.id}>
+          <div className="" key={elem.id}>
             <Tasks elem={elem} />
           </div>
         ))}

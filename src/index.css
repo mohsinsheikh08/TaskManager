@@ -1,2 +1,139 @@
 @import "tailwindcss";
 
+/* Mobile Phones (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  /* Task Manager Container */
+  .task-container {
+    padding: 10px !important;
+    width: 100% !important;
+  }
+  
+  /* Input Fields */
+  .task-input {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .task-input input,
+  .task-input select {
+    width: 100% !important;
+  }
+  
+  /* Task List */
+  .task-list {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Filter Buttons */
+  .filter-buttons {
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+  }
+  
+  .filter-buttons button {
+    flex: 1 !important;
+    min-width: 60px !important;
+  }
+  
+  /* Task Card */
+  .task-card {
+    flex-direction: column !important;
+    padding: 10px !important;
+    gap: 5px !important;
+  }
+  
+  /* Header */
+  .header {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  /* Stats */
+  .task-stats {
+    flex-wrap: wrap !important;
+  }
+  
+  /* Text Sizes */
+  h1 { font-size: 24px !important; }
+  h2 { font-size: 18px !important; }
+  p { font-size: 14px !important; }
+}
+
+/* Very Small Phones (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .filter-buttons button {
+    font-size: 12px !important;
+    padding: 5px !important;
+  }
+  
+  .task-card {
+    padding: 8px !important;
+  }
+}
+
+@media (max-width : 480px){
+     .responsive1{
+      height: 70px;
+     }
+     .responsive2{
+      height: 55%;
+     }
+     .responsive3{
+      padding: 8px 15px 8px 15px;
+     }
+}
+@media (max-width : 400px){
+     .responsive1{
+      height: 60px;
+     }
+     .responsive2{
+      height: 100%;
+     }
+     .responsive3{
+      padding: 8px 15px 8px 15px;
+     }
+}
+
+
+
+@media (max-width : 510px){
+     .responsive4{
+      display: none;
+     }
+     .responsive5{
+       grid-template-columns:  40px 40px 40px;
+       width: 90px;
+     }
+     .responsive6{
+      padding-right: 0px;
+      padding-left: 0px;
+     }
+}
+
+
+
+@media (max-width : 500px){
+     .responsive4{
+      width: 300px;
+     }
+}
+
+@media (max-width : 470px){
+     .responsive4{
+      flex-wrap: wrap;
+     }
+}
+
+@media (max-width : 1000px){
+     .responsive7{
+      padding-left: 50px;
+     }
+}
+
+
+@media (max-width : 1062px){
+     .responsive8{
+      display: none;
+     }
+}
+

@@ -25,11 +25,11 @@ const Tasks = ({ elem }) => {
     updateTask(elem.id, elem.task, !isCompleted, elem.priority, elem.dueDate);
   };
   return (
-    <div className={`transition all ease-in-out duration-500 ${isDark ? "bg-[#333366]" : "bg-white"} rounded-xl`}>
-      <div className={`w-full h-12  flex items-center  ounded-xl `}>
-        <div className="w-[3.5%] h-full flex justify-center items-center border-r-1 border-gray-400">
+    <div className={`transition shrink-0 overflow-x-auto scrollbar-none all ease-in-out duration-500 ${isDark ? "bg-[#333366]" : "bg-white"} rounded-xl`}>
+      <div className={`w-full h-12  flex items-center  shrink-0 rounded-xl   `}>
+        <div className="w-[3.5%] h-full shrink-0 flex justify-center items-center border-r-1 border-gray-400">
           <input
-            className="scale-150 accent-green-400  cursor-pointer"
+            className="scale-150 accent-green-400 shrink-0 cursor-pointer"
             type="checkbox"
             checked={isCompleted}
             onChange={() => {
@@ -44,17 +44,17 @@ const Tasks = ({ elem }) => {
           onMouseLeave={() => {
             setIsHover(false);
           }}
-          className="w-[25%] overflow-hidden whitespace-nowrap  h-full flex justify-start ml-5 items-center border-r-1 border-gray-400"
+          className="w-[25%] overflow-hidden whitespace-nowrap shrink-0  h-full flex justify-start ml-5 items-center border-r-1 border-gray-400"
         >
           {isEdit === false ? (
             <h1
-              className={`truncate transition all ease-in-out duration-500 w-68 ${isCompleted === false ? `` : (isDark ? "text-gray-500 line-through" : "text-gray-300 line-through")} ${!isCompleted ? (isDark ? "text-white" : "text-black") : ""} `}
+              className={`truncate transition all ease-in-out shrink-0 duration-500 w-68 ${isCompleted === false ? `` : (isDark ? "text-gray-500 line-through" : "text-gray-300 line-through")} ${!isCompleted ? (isDark ? "text-white" : "text-black") : ""} `}
             >
               {editValue}
             </h1>
           ) : (
             <input
-              className={`truncate h-full transition all ease-in-out duration-500 ${isDark ? "text-white" : "text-black"}  w-65 outline-none  `}
+              className={`truncate h-full transition all shrink-0 ease-in-out duration-500 ${isDark ? "text-white" : "text-black"}  w-65 outline-none  `}
               onKeyDown={(e) => {
                 if (e.key === "Enter") SaveHandler();
                 if (e.key === "Escape") CancelHandler();
@@ -71,13 +71,13 @@ const Tasks = ({ elem }) => {
             onClick={() => {
               isEdit === false ? setIsEdit(true) : setIsEdit(false);
             }}
-            className=" transition all mr-6 cursor-pointer ease-in-out bg-[#6F64E3]/60 rounded-lg text-white  duration-1000"
+            className=" transition all mr-6 cursor-pointer shrink-0 ease-in-out bg-[#6F64E3]/60 rounded-lg text-white  duration-1000"
           >
             {isHover === true ? (
               isEdit === false ? (
                 <Pencil
                   size={30}
-                  className="border-[#6F64E3] p-1 border-2 rounded-lg"
+                  className="border-[#6F64E3] p-1 border-2 shrink-0 rounded-lg"
                 />
               ) : (
                 <Check
@@ -85,7 +85,7 @@ const Tasks = ({ elem }) => {
                     SaveHandler();
                   }}
                   size={30}
-                  className="border-[#6F64E3] p-1 border-2 rounded-lg"
+                  className="border-[#6F64E3] p-1 border-2 shrink-0 rounded-lg"
                 />
               )
             ) : (
@@ -93,9 +93,9 @@ const Tasks = ({ elem }) => {
             )}
           </button>
         </div>
-        <div className="w-[18%] h-full flex justify-start ml-5 items-center border-r-1 border-gray-400">
+        <div className="w-[18%] h-full shrink-0 flex justify-start ml-5 items-center border-r-1 border-gray-400">
           <select
-            className={`appearance-none transition all ease-in-out duration-500 w-full focus:outline-none ${isDark ? "text-white" : "text-black"}  rounded-lg  py-2 pr-8`}
+            className={`appearance-none shrink-0 transition all ease-in-out duration-500 w-full focus:outline-none ${isDark ? "text-white" : "text-black"}  rounded-lg  py-2 pr-8`}
             name="Choose Priority"
             id=""
             value={elem.priority || "medium"}
@@ -109,7 +109,7 @@ const Tasks = ({ elem }) => {
             <option value="low">🟢 Low</option>
           </select>
         </div>
-        <div className="w-[18%] h-full flex justify-start ml-5 items-center border-r-1 border-gray-400">
+        <div className="w-[18%] h-full flex shrink-0 justify-start ml-5 items-center border-r-1 border-gray-400">
           <input value={elem.dueDate || ''} onChange={(e) => {updateTask(elem.id, elem.task, elem.isComplete, elem.priority, e.target.value)}} type="date" className={`transition all ease-in-out duration-500 ${isDark ? "text-white" : "text-black"} `} />
         </div>
         <div
@@ -118,21 +118,21 @@ const Tasks = ({ elem }) => {
               ToggleComplete();
             }
           }}
-          className="w-[12%] h-full flex justify-start ml-5 items-center border-r-1 border-gray-400"
+          className="w-[12%] h-full flex shrink-0 justify-start ml-5 items-center border-r-1 border-gray-400"
         >
           <button
-            className={` flex items-center px-2 py-1 transition all ease-in-out duration-500 justify-start ${isCompleted ? (isDark ?"text-green-100 bg-green-700 "  : "bg-green-100 text-green-700") : (isDark ? "text-yellow-100 bg-yellow-700" : "bg-yellow-100 text-yellow-700") }`}
+            className={` flex items-center shrink-0 px-2 py-1 transition all ease-in-out duration-500 justify-start ${isCompleted ? (isDark ?"text-green-100 bg-green-700 "  : "bg-green-100 text-green-700") : (isDark ? "text-yellow-100 bg-yellow-700" : "bg-yellow-100 text-yellow-700") }`}
           >
             {isCompleted ? "Completed" : "Pending"}
           </button>
         </div>
-        <div className="w-[12%] h-full flex justify-start ml-7 items-center  border-gray-400">
+        <div className="w-[12%] h-full flex shrink-0 justify-start ml-7 items-center  border-gray-400">
           
           <button
             onClick={() => {
               deleteTask(elem.id);
             }}
-            className={` transition all ease-in-out duration-500 ${isDark ? "bg-red-800 text-red-400 " : "bg-red-500/50 text-red-600"} px-4 py-1 `}
+            className={` transition all shrink-0 ease-in-out duration-500 ${isDark ? "bg-red-800 text-red-400 " : "bg-red-500/50 text-red-600"} px-4 py-1 `}
           >
             Delete
           </button>
